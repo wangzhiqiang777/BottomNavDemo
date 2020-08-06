@@ -1,7 +1,18 @@
 package com.neusoft.qiangzi.bottomnavdemo.ui.me;
 
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 public class MeViewModel extends ViewModel {
-    // TODO: Implement the ViewModel
+    private MutableLiveData<String> mText;
+
+    public MeViewModel() {
+        mText = new MutableLiveData<>();
+        mText.setValue("This is me fragment");
+    }
+
+    public LiveData<String> getText() {
+        return mText;
+    }
 }
